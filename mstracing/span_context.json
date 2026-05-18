@@ -1,0 +1,9 @@
+{
+    "traceId": "1234567890abcdef1234567890abcdef",
+    "spanId": "1234567890abcdef",
+    "sampled": 0,
+    "baggage": {
+        "user_id": "12345",
+        "session_id": "abcde12345"
+    }
+}

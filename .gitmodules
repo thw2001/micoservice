@@ -1,0 +1,6 @@
+[submodule "extern/crpc"]
+	path = extern/crpc
+	url = ssh://git@gitlab.cetc32rjpts.com:30001/yanggang/crpc.git
+[submodule "extern/amp-shm"]
+	path = extern/amp-shm
+	url = ssh://git@gitlab.cetc32rjpts.com:30001/yanggang/amp-shm.git

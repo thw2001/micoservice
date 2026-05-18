@@ -1,0 +1,138 @@
+{
+  "center": [
+    {
+      "topic": "node_center_recv",
+      "msg_size": 8192,
+      "len": 100,
+      "topic_priority": 10,
+      "pubers": [
+        {
+          "name": "node1_recv"
+        },
+        {
+          "name": "node2_recv"
+        }
+      ],
+      "subers": [
+        {
+          "name": "node_center"
+        }
+      ]
+    },
+    {
+      "topic": "node1_recv",
+      "msg_size": 8192,
+      "len": 100,
+      "topic_priority": 10,
+      "pubers": [
+        {
+          "name": "node_center"
+        }
+      ],
+      "subers": [
+        {
+          "name": "node1_recv"
+        }
+      ]
+    },
+    {
+      "topic": "node2_recv",
+      "msg_size": 8192,
+      "len": 100,
+      "topic_priority": 10,
+      "pubers": [
+        {
+          "name": "node_center"
+        }
+      ],
+      "subers": [
+        {
+          "name": "node2_recv"
+        }
+      ]
+    },
+    {
+      "topic": "rpc/req/node1_recv",
+      "msg_size": 8192,
+      "len": 100,
+      "topic_priority": 10,
+      "pubers": [
+        {
+          "name": "node_center"
+        }
+      ],
+      "subers": [
+        {
+          "name": "node1_recv"
+        }
+      ]
+    },
+    {
+      "topic": "rpc/resp/node1_recv",
+      "msg_size": 8192,
+      "len": 100,
+      "topic_priority": 10,
+      "pubers": [
+        {
+          "name": "node1_recv"
+        }
+      ],
+      "subers": [
+        {
+          "name": "node_center"
+        }
+      ]
+    },
+    {
+      "topic": "rpc/req/node2_recv",
+      "msg_size": 8192,
+      "len": 100,
+      "topic_priority": 10,
+      "pubers": [
+        {
+          "name": "node_center"
+        }
+      ],
+      "subers": [
+        {
+          "name": "node2_recv"
+        }
+      ]
+    },
+    {
+      "topic": "rpc/resp/node2_recv",
+      "msg_size": 8192,
+      "len": 100,
+      "topic_priority": 10,
+      "pubers": [
+        {
+          "name": "node2_recv"
+        }
+      ],
+      "subers": [
+        {
+          "name": "node_center"
+        }
+      ]
+    },
+    {
+      "topic": "rpc/resp/node_center",
+      "msg_size": 8192,
+      "len": 100,
+      "topic_priority": 10,
+      "pubers": [
+        {
+          "name": "node1_recv"
+        },
+        {
+          "name": "node2_recv"
+        }
+      ],
+      "subers": [
+        {
+          "name": "node_center"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+    "msg": 0,
+    "name": "node1",
+    "id": "node1_recv",
+    "os": "reworks-cert",
+    "arch": "aarch64",
+    "type": "amp",
+    "suffix": "node1_recv",
+    "timestamp": 1128822,
+    "device": [
+        {
+            "name": "d1"
+        },
+        {
+            "name": "d2"
+        }
+    ]
+}

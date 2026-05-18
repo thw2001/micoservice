@@ -1,0 +1,62 @@
+stages:
+  - test
+
+variables:
+  CPPCHECK_OPTIONS: "--enable=warning,performance,portability,style --inline-suppr --force"
+  # GIT_SUBMODULE_STRATEGY: recursive
+  # GIT_STRATEGY: clone
+
+cppcheck:
+  stage: test
+  tags:
+    - kylin-linux
+  before_script:
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -p 30001 gitlab.cetc32rjpts.com >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    # 关键步骤：递归地拉取并初始化所有子模块
+    - git submodule sync --recursive
+    - git submodule update --init --recursive
+  script:
+    - |
+      # 检查 cppcheck 是否确实可用
+      if ! command -v cppcheck &> /dev/null; then
+          echo "Fatal Error: cppcheck command not found on the runner!"
+          exit 1
+      fi
+
+      echo "Running cppcheck with options: $CPPCHECK_OPTIONS"
+      
+      # 运行检查并生成XML报告
+      cppcheck $CPPCHECK_OPTIONS --xml-version=2 ./util/ ./base/ ./comm/ ./micoservice/ ./node/ ./registry/  2> cppcheck-result.xml
+      CPPCHECK_EXIT=$?
+
+      # 生成HTML报告（如果工具存在）
+      if command -v cppcheck-htmlreport &> /dev/null; then
+        echo "Generating HTML report..."
+        cppcheck-htmlreport --file=cppcheck-result.xml \
+                           --report-dir=cppcheck-html-report \
+                           --source-dir=.
+      else
+        echo "Info: cppcheck-htmlreport not available."
+      fi
+
+      # 根据cppcheck的退出码决定Job状态
+      # 即使有错误，我们也完成了报告生成，所以先不退出
+      echo "Cppcheck finished with exit code: $CPPCHECK_EXIT"
+
+      # 最后，如果cppcheck发现了错误（--error-exitcode=1），则让Job失败
+      if [ $CPPCHECK_EXIT -ne 0 ]; then
+        echo "Failing job due to errors found by Cppcheck."
+        exit $CPPCHECK_EXIT
+      fi
+  artifacts:
+    when: always
+    paths:
+      - cppcheck-html-report/
+    reports:
+      junit: cppcheck-result.xml
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

@@ -1,0 +1,10 @@
+{
+    "msg": 0,
+    "config": [
+        {
+            "msg": 0,
+            "node_id": "linux1",
+            "command": "/usr/bin/ls"
+        }
+    ]
+}

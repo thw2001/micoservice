@@ -1,0 +1,14 @@
+### 获取节点情况
+GET http://127.0.0.1:8000/api/v1/node/info HTTP/1.1
+
+{"dsp:reworks:arm":{"1":{"suffix":"3.0.2","timestamp":1743145113,"os":"reworks","device":[{"name":"rapidio"},{"name":"mhal"}],"type":"dsp","msg":1,"arch":"arm","id":"1"}}}
+
+### 获取微服务情况
+GET http://127.0.0.1:8000/api/v1/micoservice/info HTTP/1.1
+
+{"lb_send":{"67e648a9303035a00ef4312c":{"status":"UP","endpoint":"test1","name":"lb_send","timestamp":1743145133,"version":"1.0.0","dependencies":[{"name":"lb_recv"}],"msg":0,"id":"67e648a9303035a00ef4312c","node_id":"1"},"67e648ab304c7cfb7901f7c0":{"status":"UP","endpoint":"test1","name":"lb_send","timestamp":1743145134,"version":"1.0.0","dependencies":[{"name":"lb_recv"}],"msg":0,"id":"67e648ab304c7cfb7901f7c0","node_id":"1"}}}
+
+
+### 给节点发指令
+
+GET http://127.0.0.1:8000/api/v1/node/deploy?node_id=node1&cmd=/usr/bin/ls HTTP/1.1

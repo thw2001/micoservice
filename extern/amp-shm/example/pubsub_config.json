@@ -1,0 +1,49 @@
+{
+  "center": [
+    {
+      "topic": "sensor_data",
+      "len": 100,
+      "msg_size": 256,
+      "topic_priority": 1,
+      "pubers": [
+        {"name": "temperature_sensor"},
+        {"name": "humidity_sensor"},
+        {"name": "pressure_sensor"}
+      ],
+      "subers": [
+        {"name": "data_processor"},
+        {"name": "data_logger"},
+        {"name": "monitoring_dashboard"}
+      ]
+    },
+    {
+      "topic": "control_commands", 
+      "len": 50,
+      "msg_size": 128,
+      "topic_priority": 2,
+      "pubers": [
+        {"name": "control_panel"},
+        {"name": "automation_engine"}
+      ],
+      "subers": [
+        {"name": "device_controller"},
+        {"name": "actuator_driver"}
+      ]
+    },
+    {
+      "topic": "system_status",
+      "len": 20,
+      "msg_size": 512,
+      "topic_priority": 0,
+      "pubers": [
+        {"name": "system_monitor"},
+        {"name": "health_checker"}
+      ],
+      "subers": [
+        {"name": "alert_manager"},
+        {"name": "status_reporter"},
+        {"name": "backup_service"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+#ifndef PUBSUB_BASE_H
+#define PUBSUB_BASE_H
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+#define PUBSUB_TOPIC_NAME_LEN 32
+
+enum{
+    PUBSUB_CMD_SUB = 0,
+    PUBSUB_CMD_PUB,
+    PUBSUB_CMD_UNSUB,
+};
+
+#define TOPIC_NOT_SUBED 2
+#define TOPIC_HAVE_SUBED 1
+#define PUB_SUB_SUCCESS 0
+#define PUB_SUB_FAILED -1 
+#define READ_CMD_FAILED -2
+#define READ_TOPIC_FAILED -3
+#define UKNOWNCMD_FAILED -4
+#define TOPIC_NAME_LEN_TOOLONG_FAILED -5
+#define READ_PAYLOAD_LEN_FAILED -6
+#define READ_PAYLOAD_FAILED -7
+#define READ_PAYLOAD_BUF_TOOLONG_FAILED -8
+#define ALLOCATE_MEMORY_FAILED -9
+#define CREATE_SUBCRIBER_FAILED -10
+#define CREATE_TOPIC_FAILED -11
+
+#define DEFAULT_FAILED_VALUE -100
+
+#ifdef __cplusplus
+}
+#endif
+#endif // PUBSUB_BASE_H

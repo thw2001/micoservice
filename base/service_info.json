@@ -1,0 +1,15 @@
+{
+    "msg": 0,
+    "name": "",
+    "id": "",
+    "version": "1.0.0",
+    "status": "UP",
+    "endpoint": "",
+    "timestamp": 1128822,
+    "node_id": "1",
+    "dependencies": [
+        {
+            "name": "userService"
+        }
+    ]
+}

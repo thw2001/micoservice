@@ -1,0 +1,3 @@
+[submodule "extern/onemessage"]
+	path = extern/onemessage
+	url = ssh://git@192.168.1.81:30001/yanggang/one-message.git

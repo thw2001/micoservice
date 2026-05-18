@@ -1,0 +1,87 @@
+{
+  "center": [
+    {
+      "topic": "sendto_t2",
+      "msg_size": 81920,
+      "len": 100,
+      "topic_priority": 10,
+      "pubers": [
+        {
+          "name": "test1_OXZd19OA"
+        }
+      ],
+      "subers": [
+        {
+          "name": "test2_q4Yt3BUA"
+        }
+      ]
+    },
+    {
+      "topic": "recvfrom_t2",
+      "msg_size": 81920,
+      "len": 100,
+      "topic_priority": 10,
+      "pubers": [
+        {
+          "name": "test2_q4Yt3BUA"
+        }
+      ],
+      "subers": [
+        {
+          "name": "test1_OXZd19OA"
+        }
+      ]
+    },
+    {
+      "topic": "registry_recv",
+      "msg_size": 8194,
+      "len": 99,
+      "topic_priority": 0,
+      "pubers": [
+        {
+          "name": "test1_OXZd19OA"
+        },
+        {
+          "name": "test2_q4Yt3BUA"
+        }
+      ],
+      "subers": [
+        {
+          "name": "registry"
+        }
+      ]
+    },
+    {
+      "topic": "test1_OXZd19OA",
+      "msg_size": 8194,
+      "len": 99,
+      "topic_priority": 0,
+      "pubers": [
+        {
+          "name": "registry"
+        }
+      ],
+      "subers": [
+        {
+          "name": "test1_OXZd19OA"
+        }
+      ]
+    },
+    {
+      "topic": "test2_q4Yt3BUA",
+      "msg_size": 8194,
+      "len": 99,
+      "topic_priority": 0,
+      "pubers": [
+        {
+          "name": "registry"
+        }
+      ],
+      "subers": [
+        {
+          "name": "test2_q4Yt3BUA"
+        }
+      ]
+    }
+  ]
+}

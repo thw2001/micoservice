@@ -1,0 +1,47 @@
+{
+    "traceId": "1234567890abcdef1234567890abcdef",
+    "spanId": "1234567890abcdef",
+    "parentSpanId": "0f1e2d3c4b5a6978",
+    "operationName": "getUserData",
+    "startTime": "2024-11-13T17:48:00Z",
+    "endTime": "2024-11-13T17:48:01Z",
+    "duration": 1000,
+    "tags": {
+        "arg1": "GET",
+        "arg2": "/api/user/12345"
+    },
+    "logs": [
+        {
+            "timestamp": "2024-11-13T17:48:00.123Z",
+            "fields": {
+                "event": "start",
+                "message": "Request received"
+            }
+        }
+    ],
+    "references": [
+        {
+            "refType": "CHILD_OF",
+            "traceId": "1234567890abcdef1234567890abcdef",
+            "spanId": "0f1e2d3c4b5a6978"
+        }
+    ],
+    "warnings": [
+        {
+            "timestamp": "2024-11-27T16:30:00Z",
+            "message": "Database connection pool is nearing maximum capacity, consider scaling."
+        }
+    ],
+    "errors": [
+        {
+            "timestamp": "2024-11-27T16:30:10Z",
+            "message": "Failed to connect to the database: Connection refused",
+            "stackTrace": "com.example.DatabaseConnection.connect(DatabaseConnection.java:56) at com.example.Service.queryData(Service.java:89)",
+            "details": {
+                "inputData": {
+                    "data": "John Doe"
+                }
+            }
+        }
+    ]
+}
